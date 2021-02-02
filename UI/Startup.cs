@@ -1,5 +1,6 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -39,6 +40,27 @@ namespace VendaSimples
             {
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Venda Simples API", Version = "1.0" });
             });
+
+            //services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            //{
+            //    builder.AllowAnyOrigin()
+            //           .AllowAnyMethod()
+            //           .AllowAnyHeader();
+            //}));
+
+            services.AddCors(opt =>
+            {
+                var policyBuilder = new CorsPolicyBuilder(new string[] { });
+                var openPolicy = policyBuilder.AllowAnyOrigin()
+                                            .AllowAnyHeader()
+                                            .AllowAnyMethod()
+                                            .WithExposedHeaders("Content-Disposition")
+                                            .Build();
+
+                opt.AddDefaultPolicy(openPolicy);
+            });
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +70,8 @@ namespace VendaSimples
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors();
 
             app.UseHttpsRedirection();
 
