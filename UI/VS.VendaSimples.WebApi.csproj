@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
+    <PackageReference Include="Dapper" Version="2.0.78" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VS.Infra.Application\VS.Infra.Application.csproj" />
+    <ProjectReference Include="..\VS.Produto.CommandDTO\VS.Produto.CommandDTO.csproj" />
+    <ProjectReference Include="..\VS.Produto.Data\VS.Produto.Data.csproj" />
+    <ProjectReference Include="..\VS.Produto.Service\VS.Produto.Application.csproj" />
+    <ProjectReference Include="..\VS.Produto.ViewModel\VS.Produto.ViewModel.csproj" />
+  </ItemGroup>
+
+
+</Project>

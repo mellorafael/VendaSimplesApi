@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VS.Produto.CommandDTO\VS.Produto.CommandDTO.csproj" />
+    <ProjectReference Include="..\VS.Produto.Data\VS.Produto.Data.csproj" />
+    <ProjectReference Include="..\VS.Produto.Domain\VS.Produto.Domain.csproj" />
+    <ProjectReference Include="..\VS.Produto.ViewModel\VS.Produto.ViewModel.csproj" />
+  </ItemGroup>
+
+</Project>
